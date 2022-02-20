@@ -11,14 +11,14 @@ pipeline{
 	    stage('gitclone') {
 
 			steps {
-				git 'https://github.com/shazforiot/nodeapp_test.git'
+				git 'https://github.com/shaik-byte/jenkins-push-docker-hub.git'
 			}
 		}
 
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t thetips4you/nodeapp_test:latest .'
+				sh 'docker build -t shaikbyte/nodeapp_test:1.0 .'
 			}
 		}
 
@@ -32,7 +32,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push thetips4you/nodeapp_test:latest'
+				sh 'docker push shaikbyte/nodeapp_test:1.0'
 			}
 		}
 	}
