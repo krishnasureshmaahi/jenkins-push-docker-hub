@@ -18,7 +18,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t shaikbyte/nodeapp_test:1.0 .'
+				sh 'docker build -t shaikbyte/nodeapp_test:latest .'
 			}
 		}
 
@@ -32,7 +32,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push shaikbyte/nodeapp_test:1.0'
+				sh 'docker push shaikbyte/nodeapp_test:latest'
 			}
 		}
 	}
