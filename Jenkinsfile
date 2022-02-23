@@ -11,7 +11,7 @@ pipeline{
 	    stage('Checkout') {
 	        
 	               steps {
-                                git branch: 'main', credentialsId: 'github', url: 'https://github.com/krishnasureshmaahi/jenkins-push-docker-hub.git'
+                                git credentialsId: 'github', url: 'https://github.com/krishnasureshmaahi/jenkins-push-docker-hub.git'
                        }
 	    }
 	    
