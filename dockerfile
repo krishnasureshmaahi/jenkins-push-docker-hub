@@ -1,2 +1,12 @@
-FROM tomcat:8
-COPY target/*.war /usr/local/tomcat/webapps/
+FROM node:latest
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+CMD [ "node", "index.js" ]
