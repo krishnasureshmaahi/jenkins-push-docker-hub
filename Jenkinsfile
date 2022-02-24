@@ -7,25 +7,25 @@ pipeline{
 	}
 
 	stages {
-	    
-	    stage('Checkout') {
-	        
-	               steps {
+
+	    stage('gitcheckout') {
+
+	                steps {
                                 git credentialsId: 'github', url: 'https://github.com/krishnasureshmaahi/jenkins-push-docker-hub.git'
-                       }
-	    }
+		        }
+		}
 	    
-		stage('gitclone') {
+	    stage('gitclone') {
 
 			steps {
-				git 'https://github.com/krishnasureshmaahi/jenkins-push-docker-hub.git'
+				git 'https://github.com/shaik-byte/jenkins-push-docker-hub.git'
 			}
 		}
 
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t suresh1904/argo_cd:latest .'
+				sh 'docker build -t shaikbyte/nodeapp_test:latest .'
 			}
 		}
 
@@ -39,7 +39,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push suresh1904/argo_cd:latest'
+				sh 'docker push shaikbyte/nodeapp_test:latest'
 			}
 		}
 	}
